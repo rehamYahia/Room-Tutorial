@@ -4,10 +4,12 @@
             xmlns:tools="http://schemas.android.com/tools" android:id="@+id/navigation"
             app:startDestination="@id/homeFragment">
 
-    <fragment android:id="@+id/homeFragment" android:name="com.example.room.HomeFragment" android:label="fragment_home"
+    <fragment android:id="@+id/homeFragment" android:name="com.example.room.ui.HomeFragment" android:label="fragment_home"
               tools:layout="@layout/fragment_home">
         <action android:id="@+id/action_homeFragment_to_updateFragment" app:destination="@id/updateFragment"/>
     </fragment>
-    <fragment android:id="@+id/updateFragment" android:name="com.example.room.UpdateFragment"
-              android:label="fragment_update" tools:layout="@layout/fragment_update"/>
+    <fragment android:id="@+id/updateFragment" android:name="com.example.room.ui.UpdateFragment"
+              android:label="fragment_update" tools:layout="@layout/fragment_update">
+        <argument android:name="currentUser" app:argType="com.example.room.entities.Person"/>
+    </fragment>
 </navigation>
