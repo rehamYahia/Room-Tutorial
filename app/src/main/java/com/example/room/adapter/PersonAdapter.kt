@@ -25,7 +25,7 @@ class PersonAdapter(private val list : List<Person>) : RecyclerView.Adapter<Pers
     override fun onBindViewHolder(holder: PersonViewHolder, position: Int) {
         holder.id.text = list[position].id.toString()
         holder.firstName.text = list[position].firstName
-        holder.lasttName.text = list[position].lastName
+        holder.lastName.text = list[position].lastName
         holder.age.text = list[position].age
 
         holder.itemView.setOnClickListener{
@@ -36,10 +36,10 @@ class PersonAdapter(private val list : List<Person>) : RecyclerView.Adapter<Pers
     }
 
     class PersonViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-         var id = itemView.findViewById<TextView>(R.id.id)
-         var firstName = itemView.findViewById<TextView>(R.id.first_name)
-         var lasttName = itemView.findViewById<TextView>(R.id.last_name)
-         var age = itemView.findViewById<TextView>(R.id.age)
+         var id: TextView = itemView.findViewById(R.id.id)
+         var firstName: TextView = itemView.findViewById(R.id.first_name)
+         var lastName: TextView = itemView.findViewById(R.id.last_name)
+         var age: TextView = itemView.findViewById(R.id.age)
 
     }
 }

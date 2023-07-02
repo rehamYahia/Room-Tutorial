@@ -7,8 +7,7 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
 import com.example.room.entities.Person
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.StateFlow
+
 
 
 @Dao

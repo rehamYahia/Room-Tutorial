@@ -25,7 +25,7 @@ class HomeFragment : Fragment() {
     private  var _binding: FragmentHomeBinding?=null
     private val binding get() = _binding!!
     private lateinit var navController: NavController
-    lateinit var personViewModel: PersonViewModel
+    private lateinit var personViewModel: PersonViewModel
 
 
 
@@ -39,9 +39,8 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        _binding = FragmentHomeBinding.inflate(inflater , container , false)
-        val view = binding.root
-        return view
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -50,7 +49,7 @@ class HomeFragment : Fragment() {
         val firstName = binding.eFirstName
         val lastName = binding.eLastName
         val age = binding.eAge
-        personViewModel = ViewModelProvider(this@HomeFragment).get(PersonViewModel::class.java)
+        personViewModel = ViewModelProvider(this@HomeFragment)[PersonViewModel::class.java]
         binding.insert.setOnClickListener {
             if(firstName.text.trim().toString().isNotEmpty() && lastName.text.trim().toString().isNotEmpty() && age.text.trim().toString().isNotEmpty()){
                 personViewModel.addUser(Person(null, firstName.text.toString() , lastName.text.toString() , age.text.toString()))
@@ -65,9 +64,6 @@ class HomeFragment : Fragment() {
                     recycler.layoutManager = LinearLayoutManager(activity, RecyclerView.VERTICAL, false)
                 })
             }
-
         }
     }
-
-
 }

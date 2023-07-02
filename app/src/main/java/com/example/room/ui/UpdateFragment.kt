@@ -9,7 +9,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.example.room.adapter.PersonAdapter
 import com.example.room.databinding.FragmentUpdateBinding
 import com.example.room.entities.Person
 import com.example.room.view_model.PersonViewModel
@@ -17,7 +16,6 @@ import com.example.room.view_model.PersonViewModel
 class UpdateFragment : Fragment() {
 
     private lateinit var personViewModel: PersonViewModel
-    private lateinit var personAdapter: PersonAdapter
 
     private  var _binding: FragmentUpdateBinding?=null
     private val binding get() = _binding!!
@@ -26,7 +24,7 @@ class UpdateFragment : Fragment() {
     private lateinit var lastName :String
     private lateinit var age:String
     private val args :UpdateFragmentArgs by navArgs()
-     var data:Person?=null
+   private lateinit var data:Person
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,15 +36,13 @@ class UpdateFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        _binding = FragmentUpdateBinding.inflate(inflater , container , false)
-        val view = binding.root
-
-        return view
+        _binding = FragmentUpdateBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        personViewModel = activity?.let { ViewModelProvider(it).get(PersonViewModel::class.java) }!!
+        personViewModel = activity?.let { ViewModelProvider(it)[PersonViewModel::class.java] }!!
          firstName = binding.updateFirstName.toString()
          lastName = binding.updateLastName.toString()
          age = binding.updateEAge.toString()
@@ -58,15 +54,15 @@ class UpdateFragment : Fragment() {
         }
     }
 
-    fun showCurrentData(){
-        firstName = data!!.firstName.toString()
-        lastName = data!!.lastName.toString()
-        age = data!!.age.toString()
+    private fun showCurrentData(){
+        firstName = data.firstName
+        lastName = data.lastName
+        age = data.age
     }
 
-    fun updateData(){
+    private fun updateData(){
         if(firstName.trim().isNotEmpty() && lastName.trim().isNotEmpty() && age.trim().isNotEmpty()){
-            personViewModel.update(Person(data!!.id ,firstName , lastName , age ))
+            personViewModel.update(Person(data.id ,firstName , lastName , age ))
         }
 
     }
