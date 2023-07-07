@@ -12,7 +12,7 @@ class PersonRepository(private val personDao: PersonDao) {
         personDao.insertData(person)
     }
 
-    suspend fun updateData(person: Person){
-        personDao.updatePerson(person)
-    }
+//    suspend fun updateData(person: Person){
+//        personDao.updatePerson(person)
+//    }
 }

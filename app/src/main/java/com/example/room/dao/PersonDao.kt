@@ -18,7 +18,7 @@ interface PersonDao {
     @Query("SELECT * FROM person")
     fun getAllData(): LiveData<List<Person>>
 
-    @Update
-    suspend fun updatePerson(person: Person)
+//    @Update
+//    suspend fun updatePerson(person: Person)
 
 }

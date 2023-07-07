@@ -28,11 +28,11 @@ class PersonAdapter(private val list : List<Person>) : RecyclerView.Adapter<Pers
         holder.lastName.text = list[position].lastName
         holder.age.text = list[position].age
 
-        holder.itemView.setOnClickListener{
-            val data = list[position]
-            val action = HomeFragmentDirections.actionHomeFragmentToUpdateFragment(data)
-            findNavController(it).navigate(action)
-        }
+//        holder.itemView.setOnClickListener{
+//            val data = list[position]
+//            val action = HomeFragmentDirections.actionHomeFragmentToUpdateFragment(data)
+//            findNavController(it).navigate(action)
+//        }
     }
 
     class PersonViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

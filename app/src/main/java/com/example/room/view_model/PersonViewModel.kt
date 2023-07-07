@@ -27,9 +27,9 @@ class PersonViewModel(application: Application) :AndroidViewModel(application) {
         }
     }
 
-    fun update(person: Person){
-        viewModelScope.launch {
-            personRepository.updateData(person)
-        }
-    }
+//    fun update(person: Person){
+//        viewModelScope.launch {
+//            personRepository.updateData(person)
+//        }
+//    }
 }
