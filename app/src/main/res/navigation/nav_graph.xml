@@ -9,5 +9,7 @@
         <action android:id="@+id/action_homeFragment_to_updateFragment" app:destination="@id/updateFragment"/>
     </fragment>
     <fragment android:id="@+id/updateFragment" android:name="com.example.myroomfortest.ui.UpdateFragment"
-              android:label="fragment_update" tools:layout="@layout/fragment_update"/>
+              android:label="fragment_update" tools:layout="@layout/fragment_update">
+        <argument android:name="user" app:argType="string"/>
+    </fragment>
 </navigation>

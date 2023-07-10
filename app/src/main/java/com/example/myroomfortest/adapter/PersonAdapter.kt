@@ -4,10 +4,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.navigation.Navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myroomfortest.R
 import com.example.myroomfortest.database.entities.PersonModel
-
+import com.example.myroomfortest.ui.HomeFragmentDirections
 
 
 class PersonAdapter(private val list : List<PersonModel>) : RecyclerView.Adapter<PersonAdapter.PersonViewHolder>() {
@@ -28,11 +29,13 @@ class PersonAdapter(private val list : List<PersonModel>) : RecyclerView.Adapter
         holder.lastName.text = list[position].lastName
         holder.age.text = list[position].age
 
-//        holder.itemView.setOnClickListener{
-//            val data = list[position]
+        holder.itemView.setOnClickListener{
+            val data:String = list[position].firstName
 //            val action = HomeFragmentDirections.actionHomeFragmentToUpdateFragment(data)
 //            findNavController(it).navigate(action)
-//        }
+            val action = HomeFragmentDirections.actionHomeFragmentToUpdateFragment()
+            findNavController(it).navigate(action)
+        }
     }
 
     class PersonViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
