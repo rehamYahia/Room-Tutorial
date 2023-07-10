@@ -5,15 +5,15 @@
     <LinearLayout android:layout_width="match_parent"
                   android:layout_height="wrap_content"
                   android:orientation="horizontal"
-    android:layout_marginTop="10dp"
-    android:layout_marginBottom="5dp"
-    android:layout_marginStart="10dp"
-    android:layout_marginRight="10dp">
+                  android:layout_marginTop="10dp"
+                  android:layout_marginBottom="5dp"
+                  android:layout_marginStart="10dp"
+                  android:layout_marginRight="10dp">
 
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                   android:textSize="20sp"
                   android:id="@+id/id"
-        android:layout_marginStart="20dp"/>
+                  android:layout_marginStart="20dp"/>
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                   android:textSize="17sp"
                   android:id="@+id/first_name"
@@ -32,5 +32,4 @@
 
 
     </LinearLayout>
-
 </androidx.cardview.widget.CardView>

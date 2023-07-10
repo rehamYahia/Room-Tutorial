@@ -4,13 +4,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.navigation.Navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.example.room.R
-import com.example.room.entities.Person
-import com.example.room.ui.HomeFragmentDirections
+import com.example.myroomfortest.R
+import com.example.myroomfortest.database.entities.PersonModel
 
-class PersonAdapter(private val list : List<Person>) : RecyclerView.Adapter<PersonAdapter.PersonViewHolder>() {
+
+
+class PersonAdapter(private val list : List<PersonModel>) : RecyclerView.Adapter<PersonAdapter.PersonViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PersonViewHolder {
         return PersonViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item , parent , false))
