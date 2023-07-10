@@ -37,9 +37,9 @@ class UpdateFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initViews(view)
-
-        val data:String = args.user
-        up_firstName.text = data.toString()
+//------------------------------proplem--------------------------------------------
+//        val data:PersonModel =args.user
+//        up_firstName.
 
         update.setOnClickListener {
 

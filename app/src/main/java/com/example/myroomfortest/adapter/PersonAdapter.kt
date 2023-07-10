@@ -30,10 +30,10 @@ class PersonAdapter(private val list : List<PersonModel>) : RecyclerView.Adapter
         holder.age.text = list[position].age
 
         holder.itemView.setOnClickListener{
-            val data:String = list[position].firstName
+            val data:PersonModel = list[position]
 //            val action = HomeFragmentDirections.actionHomeFragmentToUpdateFragment(data)
 //            findNavController(it).navigate(action)
-            val action = HomeFragmentDirections.actionHomeFragmentToUpdateFragment()
+            val action = HomeFragmentDirections.actionHomeFragmentToUpdateFragment(data)
             findNavController(it).navigate(action)
         }
     }
