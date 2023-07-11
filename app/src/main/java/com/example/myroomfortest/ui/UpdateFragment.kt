@@ -19,7 +19,7 @@ class UpdateFragment : Fragment() {
     private lateinit var up_lastName: EditText
     private lateinit var up_age: EditText
     private lateinit var update: Button
-    private val args : UpdateFragmentArgs by navArgs()
+//    private val args : UpdateFragmentArgs by navArgs()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,10 +37,10 @@ class UpdateFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initViews(view)
-//------------------------------proplem--------------------------------------------
-//        val data:PersonModel =args.user
-//        up_firstName.
 
+//       up_firstName.text  = args.user.firstName.toString()  as Editable
+//        up_lastName.text = args.user.lastName.toString() as Editable
+//        up_age.text = args.user.age.toString() as Editable
         update.setOnClickListener {
 
         }
