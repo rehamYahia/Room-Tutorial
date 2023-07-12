@@ -9,16 +9,13 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myroomfortest.R
-import com.example.myroomfortest.database.dao.PersonDao
 import com.example.myroomfortest.database.entities.PersonModel
-import com.example.myroomfortest.database.room_builder.PersonDatabase
 import com.example.myroomfortest.view_model.PersonViewModel
 import com.example.room.adapter.PersonAdapter
 import dagger.hilt.android.AndroidEntryPoint

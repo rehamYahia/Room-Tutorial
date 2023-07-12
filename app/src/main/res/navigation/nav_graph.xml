@@ -10,6 +10,6 @@
     </fragment>
     <fragment android:id="@+id/updateFragment" android:name="com.example.myroomfortest.ui.UpdateFragment"
               android:label="fragment_update" tools:layout="@layout/fragment_update">
-        <argument android:name="person" app:argType="com.example.myroomfortest.database.entities.PersonModel"/>
+        <argument android:name="current" app:argType="com.example.myroomfortest.database.entities.PersonModel"/>
     </fragment>
 </navigation>

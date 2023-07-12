@@ -12,6 +12,8 @@ import androidx.navigation.fragment.navArgs
 import com.example.myroomfortest.R
 import com.example.myroomfortest.database.entities.PersonModel
 import dagger.hilt.android.AndroidEntryPoint
+import java.lang.reflect.Parameter
+import java.security.Policy
 
 @AndroidEntryPoint
 class UpdateFragment : Fragment() {
@@ -19,7 +21,7 @@ class UpdateFragment : Fragment() {
     private lateinit var up_lastName: EditText
     private lateinit var up_age: EditText
     private lateinit var update: Button
-//    private val args : UpdateFragmentArgs by navArgs()
+    private val args : UpdateFragmentArgs by navArgs()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,8 +39,9 @@ class UpdateFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initViews(view)
+//        val args:PersonModel = UpdateFragmentArgs.fromBundle(arguments)
 
-//       up_firstName.text  = args.user.firstName.toString()  as Editable
+       up_firstName.text = args.person.firstName.toString()
 //        up_lastName.text = args.user.lastName.toString() as Editable
 //        up_age.text = args.user.age.toString() as Editable
         update.setOnClickListener {
@@ -48,7 +51,7 @@ class UpdateFragment : Fragment() {
 
     private fun initViews(view: View){
         update = view.findViewById(R.id.update)
-        up_firstName = view.findViewById(R.id.update_FirstName)
+        up_firstName = view.findViewById<EditText?>(R.id.update_FirstName)
         up_lastName = view.findViewById(R.id.update_LastName)
         up_age = view.findViewById(R.id.update_Age)
 
