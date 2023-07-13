@@ -46,9 +46,17 @@ class UpdateFragment : Fragment() {
         binding.updateAge.editText?.setText(args.current.age)
 
         binding.update.setOnClickListener {
-            val person = PersonModel(0, binding.updateFirstName.editText?.text.toString() ,
+            val person = PersonModel(args.current.id, binding.updateFirstName.editText?.text.toString() ,
                 binding.updateLastName.editText?.text.toString() , binding.updateAge.editText?.text.toString())
             personViewModel.updateData(person)
+        }
+
+        binding.deleteUser.setOnClickListener {
+            personViewModel.deleteUser(args.current)
+        }
+
+        binding.deleteAllUser.setOnClickListener {
+            personViewModel.deleteAllUsers()
         }
     }
 

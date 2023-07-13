@@ -16,5 +16,13 @@ class PersonRepoImp(val personDao: PersonDao):PersonRepo {
         personDao.updateData(person)
     }
 
+    override suspend fun deleteUser(person: PersonModel) {
+        personDao.deleteUser(person)
+    }
+
+    override suspend fun deleteAllUser() {
+     personDao.deleteAllUsers()
+    }
+
 
 }

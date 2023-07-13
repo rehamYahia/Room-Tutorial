@@ -14,4 +14,10 @@ interface PersonDao {
 
     @Update
     suspend fun updateData(person: PersonModel)
+
+    @Delete
+    suspend fun deleteUser(person: PersonModel)
+
+    @Query("DELETE FROM personTable")
+    suspend fun deleteAllUsers()
 }

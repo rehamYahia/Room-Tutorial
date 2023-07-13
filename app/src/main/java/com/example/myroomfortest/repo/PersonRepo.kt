@@ -10,4 +10,8 @@ interface PersonRepo {
     fun getAllPerson(): LiveData<List<PersonModel>>
 
     suspend fun updateData(person: PersonModel)
+
+    suspend fun deleteUser(person: PersonModel)
+
+    suspend fun deleteAllUser()
 }

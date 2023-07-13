@@ -32,5 +32,18 @@ class PersonViewModel @Inject constructor(val repoImp:PersonRepo) :ViewModel() {
         }
     }
 
+    fun deleteUser(person: PersonModel){
+        viewModelScope.launch{
+            repoImp.deleteUser(person)
+        }
+    }
+
+    fun deleteAllUsers()
+    {
+        viewModelScope.launch {
+            repoImp.deleteAllUser()
+        }
+    }
+
 
 }

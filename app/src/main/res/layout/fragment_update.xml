@@ -85,5 +85,15 @@
             android:id="@+id/update"
             android:text="update data"
             android:layout_margin="20dp"/>
+    <Button android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/deleteUser"
+            android:text="delete user"
+            android:layout_margin="20dp"/>
+    <Button android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/deleteAllUser"
+            android:text="delete all user"
+            android:layout_margin="20dp"/>
 
 </LinearLayout>
