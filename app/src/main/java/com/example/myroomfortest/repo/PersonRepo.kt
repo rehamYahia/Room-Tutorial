@@ -7,5 +7,7 @@ import com.example.myroomfortest.database.entities.PersonModel
 interface PersonRepo {
     suspend fun insertPerson(person: PersonModel)
 
-    suspend fun getAllPerson(): LiveData<List<PersonModel>>
+    fun getAllPerson(): LiveData<List<PersonModel>>
+
+    suspend fun updateData(person: PersonModel)
 }

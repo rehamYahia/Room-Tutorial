@@ -11,7 +11,10 @@ class PersonRepoImp(val personDao: PersonDao):PersonRepo {
         personDao.insertDataToLocal(person)
     }
 
-    override suspend fun getAllPerson(): LiveData<List<PersonModel>> = personDao.getDataFromLocal()
+    override  fun getAllPerson(): LiveData<List<PersonModel>> = personDao.getDataFromLocal()
+    override suspend fun updateData(person: PersonModel) {
+        personDao.updateData(person)
+    }
 
 
 }

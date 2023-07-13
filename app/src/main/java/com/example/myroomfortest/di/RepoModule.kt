@@ -15,7 +15,6 @@ import javax.inject.Singleton
 object RepoModule {
 
     @Provides
-    @Singleton
     fun provideRepo(personDao: PersonDao):PersonRepo{
         return PersonRepoImp(personDao)
     }

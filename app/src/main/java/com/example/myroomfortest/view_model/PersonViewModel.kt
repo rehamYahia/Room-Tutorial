@@ -26,5 +26,11 @@ class PersonViewModel @Inject constructor(val repoImp:PersonRepo) :ViewModel() {
         }
     }
 
+    fun updateData(person:PersonModel){
+        viewModelScope.launch {
+            repoImp.updateData(person)
+        }
+    }
+
 
 }

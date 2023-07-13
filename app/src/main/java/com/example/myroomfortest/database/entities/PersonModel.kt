@@ -9,7 +9,12 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 @Entity(tableName = "personTable")
-data class PersonModel(@PrimaryKey(autoGenerate = true) val id:Int, val firstName: String?, val lastName:String?, val age:String?)
+data class PersonModel(
+    @PrimaryKey(autoGenerate = true)
+    val id:Int,
+    val firstName: String?,
+    val lastName:String?,
+    val age:String?)
     : Parcelable
 
 

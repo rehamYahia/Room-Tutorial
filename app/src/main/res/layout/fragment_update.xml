@@ -6,34 +6,84 @@
              tools:context=".ui.UpdateFragment"
               android:orientation="vertical"
 >
-    <EditText android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:hint="first name"
-              android:layout_margin="10dp"
-              android:id="@+id/update_FirstName"
-              android:textColor="@color/black"
-    />
-    <EditText android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:hint="last name"
-              android:layout_margin="10dp"
-              android:id="@+id/update_LastName"
-              android:textColor="@color/black"
-    />
-    <EditText android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:hint="age"
-              android:layout_margin="10dp"
-              android:id="@+id/update_Age"
-              android:textColor="@color/black"
-              android:layout_marginBottom="20dp"
-    />
+<!--    <EditText android:layout_width="match_parent"-->
+<!--              android:layout_height="wrap_content"-->
+<!--              android:hint="first name"-->
+<!--              android:layout_margin="10dp"-->
+<!--              android:id="@+id/update_FirstName"-->
+<!--              android:textColor="@color/black"-->
+<!--    />-->
+<!--    <EditText android:layout_width="match_parent"-->
+<!--              android:layout_height="wrap_content"-->
+<!--              android:hint="last name"-->
+<!--              android:layout_margin="10dp"-->
+<!--              android:id="@+id/update_LastName"-->
+<!--              android:textColor="@color/black"-->
+<!--    />-->
+<!--    <EditText android:layout_width="match_parent"-->
+<!--              android:layout_height="wrap_content"-->
+<!--              android:hint="age"-->
+<!--              android:layout_margin="10dp"-->
+<!--              android:id="@+id/update_Age"-->
+<!--              android:textColor="@color/black"-->
+<!--              android:layout_marginBottom="20dp"-->
+<!--    />-->
+    <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/update_FirstName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="DuplicateIds,MissingConstraints"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+    >
+        <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="first name"
+                android:textColor="@color/black"
+        />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/update_LastName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="DuplicateIds,MissingConstraints"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+    >
+        <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="last name"
+                android:textColor="@color/black"
+        />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/update_Age"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="DuplicateIds,MissingConstraints"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+    >
+        <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="age"
+                android:textColor="@color/black"
+                android:layout_marginBottom="20dp"
+        />
+    </com.google.android.material.textfield.TextInputLayout>
+
     <Button android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/update"
             android:text="update data"
             android:layout_margin="20dp"/>
-
-
 
 </LinearLayout>

@@ -1,10 +1,7 @@
 package com.example.myroomfortest.database.dao
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import com.example.myroomfortest.database.entities.PersonModel
 
 @Dao
@@ -14,4 +11,7 @@ interface PersonDao {
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertDataToLocal(person:PersonModel)
+
+    @Update
+    suspend fun updateData(person: PersonModel)
 }
