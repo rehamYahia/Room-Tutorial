@@ -46,10 +46,13 @@ class HomeFragment : Fragment() {
 
         binding.insert.setOnClickListener {
             if (binding.eFirstName.text.toString().trim().isNotEmpty() && binding.eLastName.text.toString().trim()
-                    .isNotEmpty() && binding.eAge.text.toString().trim().isNotEmpty()
+                    .isNotEmpty() && binding.eAge.text.toString().trim().isNotEmpty()&&
+                binding.addName.text.toString().trim().isNotEmpty() &&
+                binding.addNumber.text.toString().trim().isNotEmpty()
             ) {
                 lifecycleScope.launch {
-                    personViewModel.insert(PersonModel(0 , binding.eFirstName.text.toString() , binding.eLastName.text.toString() , binding.eAge.text.toString()))
+                    personViewModel.insert(PersonModel(0 , binding.eFirstName.text.toString() ,
+                        binding.eLastName.text.toString() , binding.eAge.text.toString() , Address(binding.addName.text.toString() , binding.addNumber.text.toString())))
                 }
             }
         }

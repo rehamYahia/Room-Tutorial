@@ -14,7 +14,12 @@ data class PersonModel(
     val id:Int,
     val firstName: String?,
     val lastName:String?,
-    val age:String?)
+    val age:String?,
+    @Embedded
+    val adress:Adress
+)
     : Parcelable
+
+data class Adress(val adressName:String , val adressNumber:String)
 
 

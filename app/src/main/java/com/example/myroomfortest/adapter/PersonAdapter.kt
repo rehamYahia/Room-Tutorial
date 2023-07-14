@@ -28,6 +28,8 @@ class PersonAdapter(private val list : List<PersonModel>) : RecyclerView.Adapter
         holder.firstName.text = list[position].firstName
         holder.lastName.text = list[position].lastName
         holder.age.text = list[position].age
+        holder.adressName.text = list[position].adress.adressName
+        holder.adressNumber.text = list[position].adress.adressNumber
 
         holder.itemView.setOnClickListener{
             val data:PersonModel = list[position]
@@ -41,6 +43,7 @@ class PersonAdapter(private val list : List<PersonModel>) : RecyclerView.Adapter
          var firstName: TextView = itemView.findViewById(R.id.first_name)
          var lastName: TextView = itemView.findViewById(R.id.last_name)
          var age: TextView = itemView.findViewById(R.id.age)
-
+        var adressName: TextView = itemView.findViewById(R.id.address_name)
+        var adressNumber: TextView = itemView.findViewById(R.id.adress_number)
     }
 }
