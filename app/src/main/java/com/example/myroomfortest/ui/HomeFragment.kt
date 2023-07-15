@@ -1,5 +1,6 @@
 package com.example.myroomfortest.ui
 
+import android.location.Address
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,6 +13,7 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myroomfortest.database.entities.Adress
 import com.example.myroomfortest.database.entities.PersonModel
 import com.example.myroomfortest.databinding.FragmentHomeBinding
 import com.example.myroomfortest.view_model.PersonViewModel
@@ -52,7 +54,9 @@ class HomeFragment : Fragment() {
             ) {
                 lifecycleScope.launch {
                     personViewModel.insert(PersonModel(0 , binding.eFirstName.text.toString() ,
-                        binding.eLastName.text.toString() , binding.eAge.text.toString() , Address(binding.addName.text.toString() , binding.addNumber.text.toString())))
+                        binding.eLastName.text.toString() , binding.eAge.text.toString() ,
+                        Adress(binding.addName.text.toString() , binding.addNumber.text.toString())
+                    ))
                 }
             }
         }

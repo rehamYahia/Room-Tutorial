@@ -3,6 +3,7 @@ package com.example.myroomfortest.database.entities
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import android.os.Parcelable
+import androidx.room.Embedded
 import kotlinx.parcelize.Parcelize
 
 
@@ -20,6 +21,9 @@ data class PersonModel(
 )
     : Parcelable
 
-data class Adress(val adressName:String , val adressNumber:String)
 
 
+@Parcelize
+data class Adress (
+    val adressName:String , val adressNumber:String
+): Parcelable
