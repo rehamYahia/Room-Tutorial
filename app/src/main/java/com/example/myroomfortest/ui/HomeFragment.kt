@@ -17,7 +17,6 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.ImageLoader
 import coil.request.ImageRequest
 import coil.request.SuccessResult
-import com.example.myroomfortest.database.entities.Adress
 import com.example.myroomfortest.database.entities.PersonModel
 import com.example.myroomfortest.databinding.FragmentHomeBinding
 import com.example.myroomfortest.view_model.PersonViewModel
@@ -52,14 +51,14 @@ class HomeFragment : Fragment() {
 
         binding.insert.setOnClickListener {
             if (binding.eFirstName.text.toString().trim().isNotEmpty() && binding.eLastName.text.toString().trim()
-                    .isNotEmpty() && binding.eAge.text.toString().trim().isNotEmpty()&&
-                binding.addName.text.toString().trim().isNotEmpty() &&
-                binding.addNumber.text.toString().trim().isNotEmpty()
+                    .isNotEmpty() && binding.eAge.text.toString().trim().isNotEmpty()
+//                binding.addName.text.toString().trim().isNotEmpty() &&
+//                binding.addNumber.text.toString().trim().isNotEmpty()
             ) {
                 lifecycleScope.launch {
                     personViewModel.insert(PersonModel(0 , binding.eFirstName.text.toString() ,
                         binding.eLastName.text.toString() , binding.eAge.text.toString() ,
-                        Adress(binding.addName.text.toString() , binding.addNumber.text.toString()),
+//                        Adress(binding.addName.text.toString() , binding.addNumber.text.toString()),
                         getImageAsBitmap()
                     ))
                 }

@@ -17,15 +17,15 @@ data class PersonModel(
     val firstName: String?,
     val lastName:String?,
     val age:String?,
-    @Embedded
-    val adress:Adress,
+//    @Embedded
+//    val adress:Adress,
     val profilePhoto:Bitmap
 )
     : Parcelable
 
 
 
-@Parcelize
-data class Adress (
-    val adressName:String , val adressNumber:String
-): Parcelable
+//@Parcelize
+//data class Adress (
+//    val adressName:String , val adressNumber:String
+//): Parcelable
