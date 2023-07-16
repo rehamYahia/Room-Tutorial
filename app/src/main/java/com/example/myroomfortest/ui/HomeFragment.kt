@@ -1,6 +1,7 @@
 package com.example.myroomfortest.ui
 
-import android.location.Address
+import android.graphics.Bitmap
+import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -13,6 +14,9 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import coil.ImageLoader
+import coil.request.ImageRequest
+import coil.request.SuccessResult
 import com.example.myroomfortest.database.entities.Adress
 import com.example.myroomfortest.database.entities.PersonModel
 import com.example.myroomfortest.databinding.FragmentHomeBinding
@@ -55,7 +59,8 @@ class HomeFragment : Fragment() {
                 lifecycleScope.launch {
                     personViewModel.insert(PersonModel(0 , binding.eFirstName.text.toString() ,
                         binding.eLastName.text.toString() , binding.eAge.text.toString() ,
-                        Adress(binding.addName.text.toString() , binding.addNumber.text.toString())
+                        Adress(binding.addName.text.toString() , binding.addNumber.text.toString()),
+                        getImageAsBitmap()
                     ))
                 }
             }
@@ -68,7 +73,15 @@ class HomeFragment : Fragment() {
             })
         }
 
+    }
 
+    private suspend fun getImageAsBitmap(): Bitmap {
+        val loading:ImageLoader = ImageLoader(requireActivity().applicationContext)
+        val request: ImageRequest = ImageRequest.Builder(requireActivity().applicationContext)
+            .data("https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.freepnglogos.com%2Fuploads%2Fsamsung-logo-text-png-1.png&tbnid=RIJ2h-iy9VAu5M&vet=10CDEQMyjNAmoXChMI4L3YjuyTgAMVAAAAAB0AAAAAEAU..i&imgrefurl=https%3A%2F%2Fwww.freepnglogos.com%2Fpics%2Fsamsung-logo-png&docid=mkQyZhxU4xNWZM&w=2272&h=1704&q=any%20image%20with%20type%20png&ved=0CDEQMyjNAmoXChMI4L3YjuyTgAMVAAAAAB0AAAAAEAU")
+            .build()
+        val result = (loading.execute(request)as SuccessResult).drawable
+        return (result as BitmapDrawable).bitmap
     }
 
 

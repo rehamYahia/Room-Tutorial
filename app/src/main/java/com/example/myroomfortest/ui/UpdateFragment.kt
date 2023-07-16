@@ -49,13 +49,13 @@ class UpdateFragment : Fragment() {
         binding.updateAddNum.editText?.setText(args.current.adress.adressName)
         binding.updateAddNum.editText?.setText(args.current.adress.adressNumber)
 
-        binding.update.setOnClickListener {
-            val person = PersonModel(args.current.id, binding.updateFirstName.editText?.text.toString() ,
-                binding.updateLastName.editText?.text.toString() , binding.updateAge.editText?.text.toString(),
-                Adress(binding.updateAddNam.editText?.text.toString() , binding.updateAddNum.editText?.text.toString())
-            )
-            personViewModel.updateData(person)
-        }
+//        binding.update.setOnClickListener {
+//            val person = PersonModel(args.current.id, binding.updateFirstName.editText?.text.toString() ,
+//                binding.updateLastName.editText?.text.toString() , binding.updateAge.editText?.text.toString(),
+//                Adress(binding.updateAddNam.editText?.text.toString() , binding.updateAddNum.editText?.text.toString())
+//            )
+//            personViewModel.updateData(person)
+//        }
 
         binding.deleteUser.setOnClickListener {
             personViewModel.deleteUser(args.current)

@@ -1,5 +1,6 @@
 package com.example.myroomfortest.database.entities
 
+import android.graphics.Bitmap
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import android.os.Parcelable
@@ -17,7 +18,8 @@ data class PersonModel(
     val lastName:String?,
     val age:String?,
     @Embedded
-    val adress:Adress
+    val adress:Adress,
+    val profilePhoto:Bitmap
 )
     : Parcelable
 
