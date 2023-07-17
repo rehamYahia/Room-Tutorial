@@ -14,4 +14,5 @@ interface PersonRepo {
     suspend fun deleteUser(person: PersonModel)
 
     suspend fun deleteAllUser()
+    fun searchForRoom(search:String):LiveData<List<PersonModel>>
 }

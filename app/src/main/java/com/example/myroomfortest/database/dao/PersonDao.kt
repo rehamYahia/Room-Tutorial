@@ -20,4 +20,7 @@ interface PersonDao {
 
     @Query("DELETE FROM personTable")
     suspend fun deleteAllUsers()
+
+    @Query("SELECT * FROM personTable WHERE firstName LIKE:searchQuery OR lastName LIKE :searchQuery OR age LIKE :searchQuery")
+    fun searchForRoom(searchQuery:String):  LiveData<List<PersonModel>>
 }

@@ -24,5 +24,7 @@ class PersonRepoImp(val personDao: PersonDao):PersonRepo {
      personDao.deleteAllUsers()
     }
 
+    override fun searchForRoom(search: String): LiveData<List<PersonModel>> =  personDao.searchForRoom(search)
+
 
 }

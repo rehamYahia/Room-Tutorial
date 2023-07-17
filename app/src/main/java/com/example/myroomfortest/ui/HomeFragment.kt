@@ -3,10 +3,9 @@ package com.example.myroomfortest.ui
 import android.graphics.Bitmap
 import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
+import android.view.*
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
@@ -17,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.ImageLoader
 import coil.request.ImageRequest
 import coil.request.SuccessResult
+import com.example.myroomfortest.R
 import com.example.myroomfortest.database.entities.PersonModel
 import com.example.myroomfortest.databinding.FragmentHomeBinding
 import com.example.myroomfortest.view_model.PersonViewModel
@@ -26,7 +26,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), SearchView.OnQueryTextListener {
     private  var _binding: FragmentHomeBinding?=null
     private val binding get() = _binding!!
     private val personViewModel:PersonViewModel   by viewModels()
@@ -86,6 +86,48 @@ class HomeFragment : Fragment() {
         val result = (request?.let { loading?.execute(it) } as SuccessResult).drawable
         return (result as BitmapDrawable).bitmap
     }
+
+//    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+//        super.onCreateOptionsMenu(menu)
+//        val search = menu?.findItem(R.id.search)
+//        val searchView = search?.actionView as SearchView
+//        searchView.isSubmitButtonEnabled = true
+//        searchView.setOnQueryTextListener(this)
+//
+//    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        val search = menu.findItem(R.id.search)
+        val searchView = search?.actionView as SearchView
+        searchView.isSubmitButtonEnabled = true
+        searchView.setOnQueryTextListener(this)
+    }
+
+    override fun onQueryTextSubmit(query: String?): Boolean {
+        if(query != null){
+            SearchForRoom(query)
+        }
+        return true
+    }
+
+    override fun onQueryTextChange(query: String?): Boolean {
+        if(query != null){
+            SearchForRoom(query)
+        }
+        return true
+    }
+
+    fun SearchForRoom(query:String){
+        val search = "%$query%"
+        personViewModel.searchForRoom(search)
+        personViewModel.searchData.observe(this , Observer {
+         PersonAdapter(it)
+        })
+
+    }
+
+
 
 
 }

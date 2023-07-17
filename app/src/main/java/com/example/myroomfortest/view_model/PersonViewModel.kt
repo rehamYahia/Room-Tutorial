@@ -13,6 +13,7 @@ import javax.inject.Inject
 @HiltViewModel
 class PersonViewModel @Inject constructor(val repoImp:PersonRepo) :ViewModel() {
    lateinit var _personLiveData: LiveData<List<PersonModel>>
+   lateinit var searchData:LiveData<List<PersonModel>>
 
     fun insert(personModel: PersonModel){
         viewModelScope.launch {
@@ -43,6 +44,10 @@ class PersonViewModel @Inject constructor(val repoImp:PersonRepo) :ViewModel() {
         viewModelScope.launch {
             repoImp.deleteAllUser()
         }
+    }
+
+    fun searchForRoom(search:String){
+        searchData = repoImp.searchForRoom(search)
     }
 
 
