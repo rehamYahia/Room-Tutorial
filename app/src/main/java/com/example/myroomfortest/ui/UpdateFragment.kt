@@ -1,19 +1,17 @@
 package com.example.myroomfortest.ui
 
-import android.location.Address
+
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
-import com.example.myroomfortest.database.entities.PersonModel
 import com.example.myroomfortest.databinding.FragmentUpdateBinding
 import com.example.myroomfortest.view_model.PersonViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.launch
+
 
 
 @AndroidEntryPoint
