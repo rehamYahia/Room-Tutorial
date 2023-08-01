@@ -4,7 +4,6 @@ import android.graphics.Bitmap
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import android.os.Parcelable
-import androidx.room.Embedded
 import kotlinx.parcelize.Parcelize
 
 
